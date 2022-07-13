@@ -45,7 +45,7 @@ function response_middleware() {
 }
 
 function send_dappmanager_notification() {
-  curl -X POST -G 'http://my.dappnode/notification-send' --data-urlencode 'type=danger' --data-urlencode title="$ETH2_CLIENT is not available" --data-urlencode 'body=Make sure you select an available client in the web3signer at packages > web3signer prater > config > Prater Chain Consensus Layer Client'
+  curl -X POST -G 'http://my.dappnode/notification-send' --data-urlencode 'type=danger' --data-urlencode title="$ETH2_CLIENT is not available" --data-urlencode 'body=Make sure you select an available client in the web3signer at packages > web3signer > config > Beacon Chain Consensus Layer Client'
 }
 
 ##################
@@ -57,7 +57,7 @@ function send_dappmanager_notification() {
 # Response: plain text
 function get_web3signer_status() {
   local response content http_code
-  response=$(curl -s -w "%{http_code}" -X GET -H "Content-Type: application/json" -H "Host: web3signer.web3signer-prater.dappnode" "${WEB3SIGNER_API}/upcheck")
+  response=$(curl -s -w "%{http_code}" -X GET -H "Content-Type: application/json" -H "Host: web3signer.web3signer.dappnode" "${WEB3SIGNER_API}/upcheck")
   http_code=${response: -3}
   content=$(echo "${response}" | head -c-4)
   response_middleware "$http_code" "$content" "web3signer"
@@ -78,7 +78,7 @@ function get_web3signer_status() {
 # }
 function get_web3signer_pubkeys() {
   local response content http_code
-  response=$(curl -s -w "%{http_code}" -X GET -H "Content-Type: application/json" -H "Host: web3signer.web3signer-prater.dappnode" "${WEB3SIGNER_API}/eth/v1/keystores")
+  response=$(curl -s -w "%{http_code}" -X GET -H "Content-Type: application/json" -H "Host: web3signer.web3signer.dappnode" "${WEB3SIGNER_API}/eth/v1/keystores")
   http_code=${response: -3}
   content=$(echo "${response}" | head -c-4)
   response_middleware "$http_code" "$content" "web3signer"
