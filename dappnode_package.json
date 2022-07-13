@@ -16,17 +16,17 @@
   "categories": ["Blockchain", "ETH2.0"],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ConsenSys/web3signer.git"
+    "url": "git+https://github.com/dappnode/DAppNodePackage-web3signer.git"
   },
   "bugs": {
-    "url": "https://github.com/ConsenSys/web3signer/issues"
+    "url": "https://github.com/dappnode/DAppNodePackage-web3signer/issues"
   },
   "links": {
     "ui": "http://ui.web3signer.dappnode?signer_url=http://web3signer.web3signer.dappnode:9000",
     "homepage": "https://docs.web3signer.consensys.net/en/latest/",
     "readme": "https://github.com/ConsenSys/web3signer/blob/master/README.md"
   },
-  "license": "GPL-3.0",
+  "license": "Apache-2.0",
   "requirements": {
     "minimumDappnodeVersion": "0.2.57"
   },
