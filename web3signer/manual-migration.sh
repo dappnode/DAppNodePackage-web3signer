@@ -47,7 +47,7 @@ function ensure_requirements() {
   # Check if web3signer is available: https://consensys.github.io/web3signer/web3signer-eth2.html#tag/Server-Status
   if [ "$(curl -s -X GET \
     -H "Content-Type: application/json" \
-    -H "Host: prysm.migration-prater.dappnode" \
+    -H "Host: prysm.migration.dappnode" \
     --write-out '%{http_code}' \
     --silent \
     --output /dev/null \
@@ -68,7 +68,7 @@ function ensure_requirements() {
 # Import validators with request body file
 # - Docs: https://consensys.github.io/web3signer/web3signer-eth2.html#operation/KEYMANAGER_IMPORT
 function import_validators() {
-  import-one-by-one --keystores-path "$MANUAL_MIGRATION_DIR" --wallet-password-path "$BACKUP_WALLETPASSWORD_FILE" --network prater
+  import-one-by-one --keystores-path "$MANUAL_MIGRATION_DIR" --wallet-password-path "$BACKUP_WALLETPASSWORD_FILE" --network mainnet
   echo "${INFO} validators imported"
 }
 
