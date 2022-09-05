@@ -7,7 +7,7 @@ fields:
       service: web3signer
     title: Beacon Chain Consensus Layer Client
     description: >-
-      **WARNING**: MAKE SURE YOU SELECT A CLIENT YOU ALREADY HAVE INSTALLED OR ARE ABOUT TO INSTALL. Select the Eth2 client you want the web3signer listen requests from.
+      **WARNING**: MAKE SURE YOU SELECT A CLIENT YOU ALREADY HAVE INSTALLED OR ARE ABOUT TO INSTALL. Select which Consensus Layer client you want the Web3signer to listen to requests from.
       You can change this parameter in the future
     enum:
       - prysm
