@@ -29,6 +29,8 @@ COPY entrypoint.sh /usr/bin/entrypoint.sh
 # Copy import one-by-one
 COPY --from=importer /usr/src/app/import-one-by-one /usr/bin
 
+ENV JAVA_OPTS="-Xmx2g -Xms128m"
+
 # Apply cron job
 RUN crontab /etc/cron.d/reload-keys-cron
 #USER web3signer
