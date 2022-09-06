@@ -61,6 +61,10 @@ env >>/etc/environment
 # IMPORTANT! The dir defined for --key-store-path must exist and have specific permissions. Should not be created with a docker volume
 mkdir -p "$KEYFILES_DIR"
 
+if grep -Fq "/opt/web3signer/keyfiles" $KEYFILES_DIR/*.yaml ;then
+  sed -i "s|/opt/web3signer/keyfiles|$KEYFILES_DIR|g" *.yaml
+fi
+
 # inotify manual migration
 while inotifywait -e close_write --include 'backup\.zip' /opt/web3signer; do
   /usr/bin/manual-migration.sh
