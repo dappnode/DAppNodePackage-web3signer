@@ -11,30 +11,37 @@ case "$ETH2_CLIENT" in
   export BEACON_NODE_API="http://beacon-chain.prysm.dappnode:3500"
   export CLIENT_API="http://validator.prysm.dappnode:3500"
   export TOKEN_FILE="/security/prysm/auth-token"
-  export CLIENTS_TO_REMOVE=(teku lighthouse nimbus)
+  export CLIENTS_TO_REMOVE=(teku lighthouse nimbus lodestar)
   ;;
 "teku")
   ETH2_CLIENT_DNS="validator.teku.dappnode"
   export BEACON_NODE_API="http://beacon-chain.teku.dappnode:3500"
   export CLIENT_API="https://validator.teku.dappnode:3500"
   export TOKEN_FILE="/security/teku/validator-api-bearer"
-  export CLIENTS_TO_REMOVE=(prysm lighthouse nimbus)
+  export CLIENTS_TO_REMOVE=(prysm lighthouse nimbus lodestar)
   ;;
 "lighthouse")
   ETH2_CLIENT_DNS="validator.lighthouse.dappnode"
   export BEACON_NODE_API="http://beacon-chain.lighthouse.dappnode:3500"
   export CLIENT_API="http://validator.lighthouse.dappnode:3500"
   export TOKEN_FILE="/security/lighthouse/api-token.txt"
-  export CLIENTS_TO_REMOVE=(teku prysm nimbus)
+  export CLIENTS_TO_REMOVE=(teku prysm nimbus lodestar)
   ;;
 "nimbus")
   ETH2_CLIENT_DNS="beacon-validator.nimbus.dappnode"
   export BEACON_NODE_API="http://beacon-validator.nimbus.dappnode:4500"
   export CLIENT_API="http://beacon-validator.nimbus.dappnode:3500"
   export TOKEN_FILE="/security/nimbus/auth-token"
-  export CLIENTS_TO_REMOVE=(teku lighthouse prysm)
+  export CLIENTS_TO_REMOVE=(teku lighthouse prysm lodestar)
   ;;
-*)
+"lodestar")
+  ETH2_CLIENT_DNS="validator.lodestar.dappnode"
+  export BEACON_NODE_API="http://beacon-chain.lodestar.dappnode:3500"
+  export CLIENT_API="http://validator.lodestar.dappnode:3500"
+  export TOKEN_FILE="/security/lodestar/api-token.txt"
+  export CLIENTS_TO_REMOVE=(teku lighthouse prysm nimbus)
+  ;;
+*) 
   echo "ETH2_CLIENT env is not set propertly"
   exit 1
   ;;
