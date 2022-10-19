@@ -33,5 +33,6 @@
   },
   "warnings": {
     "onRemove": "Make sure your web3signer does not have this client selected or you will stop validating! (Packages > web3signer > config > client)"
-  }
+  },
+  "globalEnvs": [{ "envs": ["CONSENSUS_CLIENT_MAINNET"], "services": ["web3signer"] }]
 }
