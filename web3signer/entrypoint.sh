@@ -61,7 +61,7 @@ env >>/etc/environment
 # IMPORTANT! The dir defined for --key-store-path must exist and have specific permissions. Should not be created with a docker volume
 mkdir -p "$KEYFILES_DIR"
 
-if grep -Fq "/opt/web3signer/keyfiles" ${KEYFILES_DIR}/*.yaml ;then
+if grep -Fq "/opt/web3signer/keyfiles" ${KEYFILES_DIR}/*.yaml; then
   sed -i "s|/opt/web3signer/keyfiles|$KEYFILES_DIR|g" ${KEYFILES_DIR}/*.yaml
 fi
 
@@ -102,5 +102,6 @@ exec /opt/web3signer/bin/web3signer \
   --slashing-protection-db-url=jdbc:postgresql://postgres.web3signer.dappnode:5432/web3signer-mainnet \
   --slashing-protection-db-username=postgres \
   --slashing-protection-db-password=mainnet \
+  --slashing-protection-pruning-enabled=true \
   --key-manager-api-enabled=true \
   ${EXTRA_OPTS}
