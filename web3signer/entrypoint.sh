@@ -6,28 +6,28 @@ export WEB3SIGNER_API="http://web3signer.web3signer.dappnode:9000"
 
 # Assign proper value to _DAPPNODE_GLOBAL_CONSENSUS_CLIENT_MAINNET. The UI uses the web3signer domain in the Header "Host"
 case "$_DAPPNODE_GLOBAL_CONSENSUS_CLIENT_MAINNET" in
-"prysm")
+"prysm.dnp.dappnode.eth")
   ETH2_CLIENT_DNS="validator.prysm.dappnode"
   export BEACON_NODE_API="http://beacon-chain.prysm.dappnode:3500"
   export CLIENT_API="http://validator.prysm.dappnode:3500"
   export TOKEN_FILE="/security/prysm/auth-token"
   export CLIENTS_TO_REMOVE=(teku lighthouse nimbus)
   ;;
-"teku")
+"teku.dnp.dappnode.eth")
   ETH2_CLIENT_DNS="validator.teku.dappnode"
   export BEACON_NODE_API="http://beacon-chain.teku.dappnode:3500"
   export CLIENT_API="https://validator.teku.dappnode:3500"
   export TOKEN_FILE="/security/teku/validator-api-bearer"
   export CLIENTS_TO_REMOVE=(prysm lighthouse nimbus)
   ;;
-"lighthouse")
+"lighthouse.dnp.dappnode.eth")
   ETH2_CLIENT_DNS="validator.lighthouse.dappnode"
   export BEACON_NODE_API="http://beacon-chain.lighthouse.dappnode:3500"
   export CLIENT_API="http://validator.lighthouse.dappnode:3500"
   export TOKEN_FILE="/security/lighthouse/api-token.txt"
   export CLIENTS_TO_REMOVE=(teku prysm nimbus)
   ;;
-"nimbus")
+"nimbus.dnp.dappnode.eth")
   ETH2_CLIENT_DNS="beacon-validator.nimbus.dappnode"
   export BEACON_NODE_API="http://beacon-validator.nimbus.dappnode:4500"
   export CLIENT_API="http://beacon-validator.nimbus.dappnode:3500"
