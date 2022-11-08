@@ -33,5 +33,13 @@
   },
   "warnings": {
     "onRemove": "Make sure your web3signer does not have this client selected or you will stop validating! (Packages > web3signer > config > client)"
-  }
+  },
+  "globalEnvs": [
+    {
+      "envs": ["CONSENSUS_CLIENT_PRATER", "EXECUTION_CLIENT_PRATER"],
+      "services": ["ui"]
+    },
+    { "envs": ["CONSENSUS_CLIENT_PRATER"], "services": ["web3signer"] }
+  ]
+  
 }
