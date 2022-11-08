@@ -13,6 +13,7 @@
     "mgarciate <mgarciate@gmail.com> (https://github.com/mgarciate)",
     "pablomendezroyo <mendez4a@gmail.com> (https://github.com/pablomendezroyo)",
     "eduadiez <eduadiez@gmail.com> (https://github.com/eduadiez)"
+    "dsimog01 <diego@dappnode.io> (https://github.com/dsimog01)"
   ],
   "categories": ["Blockchain", "ETH2.0"],
   "repository": {
@@ -23,7 +24,7 @@
     "url": "https://github.com/dappnode/DAppNodePackage-web3signer/issues"
   },
   "links": {
-    "ui": "http://ui.web3signer.dappnode?signer_url=http://web3signer.web3signer.dappnode:9000",
+    "ui": "http://ui.web3signer.dappnode",
     "homepage": "https://docs.web3signer.consensys.net/en/latest/",
     "readme": "https://github.com/ConsenSys/web3signer/blob/master/README.md"
   },
