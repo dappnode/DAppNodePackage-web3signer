@@ -12,7 +12,7 @@
   "contributors": [
     "mgarciate <mgarciate@gmail.com> (https://github.com/mgarciate)",
     "pablomendezroyo <mendez4a@gmail.com> (https://github.com/pablomendezroyo)",
-    "eduadiez <eduadiez@gmail.com> (https://github.com/eduadiez)"
+    "eduadiez <eduadiez@gmail.com> (https://github.com/eduadiez)",
     "dsimog01 <diego@dappnode.io> (https://github.com/dsimog01)"
   ],
   "categories": ["Blockchain", "ETH2.0"],
@@ -37,10 +37,10 @@
   },
   "globalEnvs": [
     {
-      "envs": ["CONSENSUS_CLIENT_PRATER", "EXECUTION_CLIENT_PRATER"],
+      "envs": ["CONSENSUS_CLIENT_MAINNET", "EXECUTION_CLIENT_MAINNET"],
       "services": ["ui"]
     },
-    { "envs": ["CONSENSUS_CLIENT_PRATER"], "services": ["web3signer"] }
+    { "envs": ["CONSENSUS_CLIENT_MAINNET"], "services": ["web3signer"] }
   ]
   
 }
