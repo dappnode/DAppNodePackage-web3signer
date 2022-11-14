@@ -4,30 +4,30 @@ export KEYFILES_DIR="/data/keyfiles"
 export NETWORK="mainnet"
 export WEB3SIGNER_API="http://web3signer.web3signer.dappnode:9000"
 
-# Assign proper value to ETH2_CLIENT. The UI uses the web3signer domain in the Header "Host"
-case "$ETH2_CLIENT" in
-"prysm")
+# Assign proper value to _DAPPNODE_GLOBAL_CONSENSUS_CLIENT_MAINNET. The UI uses the web3signer domain in the Header "Host"
+case "$_DAPPNODE_GLOBAL_CONSENSUS_CLIENT_MAINNET" in
+"prysm.dnp.dappnode.eth")
   ETH2_CLIENT_DNS="validator.prysm.dappnode"
   export BEACON_NODE_API="http://beacon-chain.prysm.dappnode:3500"
   export CLIENT_API="http://validator.prysm.dappnode:3500"
   export TOKEN_FILE="/security/prysm/auth-token"
   export CLIENTS_TO_REMOVE=(teku lighthouse nimbus)
   ;;
-"teku")
+"teku.dnp.dappnode.eth")
   ETH2_CLIENT_DNS="validator.teku.dappnode"
   export BEACON_NODE_API="http://beacon-chain.teku.dappnode:3500"
   export CLIENT_API="https://validator.teku.dappnode:3500"
   export TOKEN_FILE="/security/teku/validator-api-bearer"
   export CLIENTS_TO_REMOVE=(prysm lighthouse nimbus)
   ;;
-"lighthouse")
+"lighthouse.dnp.dappnode.eth")
   ETH2_CLIENT_DNS="validator.lighthouse.dappnode"
   export BEACON_NODE_API="http://beacon-chain.lighthouse.dappnode:3500"
   export CLIENT_API="http://validator.lighthouse.dappnode:3500"
   export TOKEN_FILE="/security/lighthouse/api-token.txt"
   export CLIENTS_TO_REMOVE=(teku prysm nimbus)
   ;;
-"nimbus")
+"nimbus.dnp.dappnode.eth")
   ETH2_CLIENT_DNS="beacon-validator.nimbus.dappnode"
   export BEACON_NODE_API="http://beacon-validator.nimbus.dappnode:4500"
   export CLIENT_API="http://beacon-validator.nimbus.dappnode:3500"
@@ -35,7 +35,7 @@ case "$ETH2_CLIENT" in
   export CLIENTS_TO_REMOVE=(teku lighthouse prysm)
   ;;
 *)
-  echo "ETH2_CLIENT env is not set propertly"
+  echo "_DAPPNODE_GLOBAL_CONSENSUS_CLIENT_MAINNET env is not set propertly"
   exit 1
   ;;
 esac
@@ -61,7 +61,7 @@ env >>/etc/environment
 # IMPORTANT! The dir defined for --key-store-path must exist and have specific permissions. Should not be created with a docker volume
 mkdir -p "$KEYFILES_DIR"
 
-if grep -Fq "/opt/web3signer/keyfiles" ${KEYFILES_DIR}/*.yaml ;then
+if grep -Fq "/opt/web3signer/keyfiles" ${KEYFILES_DIR}/*.yaml; then
   sed -i "s|/opt/web3signer/keyfiles|$KEYFILES_DIR|g" ${KEYFILES_DIR}/*.yaml
 fi
 
