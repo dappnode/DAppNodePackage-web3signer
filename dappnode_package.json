@@ -44,5 +44,12 @@
       "envs": ["CONSENSUS_CLIENT_MAINNET"],
       "services": ["web3signer"]
     }
+  ],
+  "backup": [
+    {
+      "name": "keystores",
+      "path": "/data/keyfiles",
+      "service": "web3signer"
+    }
   ]
 }
