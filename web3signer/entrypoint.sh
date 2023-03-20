@@ -103,7 +103,7 @@ exec /opt/web3signer/bin/web3signer \
   --metrics-host 0.0.0.0 \
   --metrics-port 9091 \
   --metrics-host-allowlist="*" \
-  --idle-connection-timeout-seconds=90 \
+  --idle-connection-timeout-seconds=900 \
   eth2 \
   --network=${NETWORK} \
   --slashing-protection-db-url=jdbc:postgresql://postgres.web3signer.dappnode:5432/web3signer-mainnet \
