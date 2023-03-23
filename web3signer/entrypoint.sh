@@ -34,7 +34,7 @@ case "$_DAPPNODE_GLOBAL_CONSENSUS_CLIENT_MAINNET" in
   export TOKEN_FILE="/security/nimbus/auth-token"
   export CLIENTS_TO_REMOVE=(teku lighthouse prysm lodestar)
   ;;
-  "lodestar.dnp.dappnode.eth")
+"lodestar.dnp.dappnode.eth")
   ETH2_CLIENT_DNS="validator.lodestar.dappnode"
   export BEACON_NODE_API="http://beacon-chain.lodestar.dappnode:3500"
   export CLIENT_API="http://validator.lodestar.dappnode:3500"
