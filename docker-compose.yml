@@ -1,4 +1,4 @@
-version: "3.5"
+version: "3.8"
 services:
   brain:
     image: "brain.web3signer.dnp.dappnode.eth:0.1.0"
@@ -20,7 +20,7 @@ services:
         http://localhost:9000/healthcheck
       interval: 5s
       timeout: 5s
-      retries: 20
+      retries: 50
     depends_on:
       postgres:
         condition: service_started
