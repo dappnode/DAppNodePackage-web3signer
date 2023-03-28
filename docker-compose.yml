@@ -16,7 +16,7 @@ services:
     image: "web3signer.web3signer.dnp.dappnode.eth:0.1.0"
     healthcheck:
       test: >-
-        curl -H 'Host: web3signer.web3signer-prater.dappnode'
+        curl -H 'Host: web3signer.web3signer.dappnode'
         http://localhost:9000/healthcheck
       interval: 5s
       timeout: 5s
