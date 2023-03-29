@@ -24,6 +24,8 @@ services:
     depends_on:
       postgres:
         condition: service_started
+    security_opt:
+      - "seccomp:unconfined"
     build:
       context: web3signer
       dockerfile: Dockerfile
