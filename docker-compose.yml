@@ -22,21 +22,31 @@ services:
       timeout: 5s
       retries: 100
     depends_on:
-      postgres:
-        condition: service_started
+      flyway:
+        condition: service_completed_successfully
     security_opt:
       - "seccomp:unconfined"
     build:
       context: web3signer
       dockerfile: Dockerfile
       args:
-        UPSTREAM_VERSION: 23.2.0
+        UPSTREAM_VERSION: 23.3.1
     environment:
-      LOG_TYPE: INFO
       EXTRA_OPTS: ""
     volumes:
       - "web3signer_data:/data"
     restart: unless-stopped
+  flyway:
+    build:
+      context: flyway
+      dockerfile: Dockerfile
+      args:
+        UPSTREAM_VERSION: 23.3.1
+    depends_on:
+      postgres:
+        condition: service_started
+    image: "flyway.web3signer.dnp.dappnode.eth:0.1.0"
+    restart: on-failure
   postgres:
     image: "postgres.web3signer.dnp.dappnode.eth:0.1.0"
     healthcheck:
@@ -48,14 +58,12 @@ services:
       context: postgres
       dockerfile: Dockerfile
       args:
-        UPSTREAM_VERSION: 23.2.0
+        UPSTREAM_VERSION: 23.3.1
     user: postgres
     volumes:
       - "postgres_data:/var/lib/postgresql/data"
-      - "postgres_migrations:/docker-entrypoint-initdb.d"
     restart: unless-stopped
 volumes:
   brain_data: {}
   web3signer_data: {}
   postgres_data: {}
-  postgres_migrations: {}
