@@ -33,7 +33,7 @@
     "minimumDappnodeVersion": "0.2.68"
   },
   "warnings": {
-    "onMajorUpdate": "This update will do a migration, it is recommended to have a backup of your keystores (http://my.dappnode/#/packages/web3signer.dnp.dappnode.eth/backup). After the update the new UI link is http://brain.web3signer.dappnode",
+    "onMajorUpdate": "This update will do a migration, it is recommended to have a backup of your keystores (http://my.dappnode/#/packages/web3signer.dnp.dappnode.eth/backup)",
     "onRemove": "Make sure your web3signer does not have this client selected or you will stop validating! (Packages > web3signer > config > client)"
   },
   "globalEnvs": [
