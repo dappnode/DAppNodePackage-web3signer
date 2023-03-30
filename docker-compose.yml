@@ -30,9 +30,8 @@ services:
       context: web3signer
       dockerfile: Dockerfile
       args:
-        UPSTREAM_VERSION: 23.3.0
+        UPSTREAM_VERSION: 23.3.1
     environment:
-      LOG_TYPE: INFO
       EXTRA_OPTS: ""
     volumes:
       - "web3signer_data:/data"
@@ -42,7 +41,7 @@ services:
       context: flyway
       dockerfile: Dockerfile
       args:
-        UPSTREAM_VERSION: 23.3.0
+        UPSTREAM_VERSION: 23.3.1
     depends_on:
       postgres:
         condition: service_started
@@ -59,7 +58,7 @@ services:
       context: postgres
       dockerfile: Dockerfile
       args:
-        UPSTREAM_VERSION: 23.3.0
+        UPSTREAM_VERSION: 23.3.1
     user: postgres
     volumes:
       - "postgres_data:/var/lib/postgresql/data"
