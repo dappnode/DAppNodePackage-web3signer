@@ -58,7 +58,7 @@
     },
     {
       "name": "brain-db",
-      "path": "/app/brain-db.json",
+      "path": "/app/data/brain-db.json",
       "service": "brain"
     }
   ]
