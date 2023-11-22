@@ -40,8 +40,7 @@
     {
       "envs": [
         "CONSENSUS_CLIENT_MAINNET",
-        "EXECUTION_CLIENT_MAINNET",
-        "FEE_RECIPIENT_MAINNET"
+        "EXECUTION_CLIENT_MAINNET"
       ],
       "services": ["brain"]
     },
