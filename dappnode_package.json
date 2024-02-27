@@ -38,7 +38,7 @@
   },
   "globalEnvs": [
     {
-      "envs": ["CONSENSUS_CLIENT_MAINNET", "EXECUTION_CLIENT_MAINNET"],
+      "envs": ["CONSENSUS_CLIENT_MAINNET", "EXECUTION_CLIENT_MAINNET", "MEVBOOST_MAINNET"],
       "services": ["brain"]
     },
     {
