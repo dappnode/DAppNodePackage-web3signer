@@ -40,7 +40,7 @@ exec /opt/web3signer/bin/web3signer \
   --key-store-path="$KEYFILES_DIR" \
   --http-listen-port=9000 \
   --http-listen-host=0.0.0.0 \
-  --http-host-allowlist="web3signer.web3signer.dappnode,brain.web3signer.dappnode,prysm.migration.dappnode,$ETH2_CLIENT_DNS" \
+  --http-host-allowlist="*" \
   --http-cors-origins="http://web3signer.web3signer.dappnode,http://brain.web3signer.dappnode,http://prysm.migration.dappnode,http://$ETH2_CLIENT_DNS" \
   --metrics-enabled=true \
   --metrics-host 0.0.0.0 \
