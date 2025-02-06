@@ -1,7 +1,7 @@
 {
   "name": "web3signer.dnp.dappnode.eth",
-  "version": "2.0.7",
-  "upstreamVersion": "24.6.0",
+  "version": "2.0.13",
+  "upstreamVersion": "24.12.0",
   "architectures": ["linux/amd64"],
   "upstreamRepo": "ConsenSys/web3signer",
   "mainService": "web3signer",
@@ -38,7 +38,11 @@
   },
   "globalEnvs": [
     {
-      "envs": ["CONSENSUS_CLIENT_MAINNET", "EXECUTION_CLIENT_MAINNET", "MEVBOOST_MAINNET"],
+      "envs": [
+        "CONSENSUS_CLIENT_MAINNET",
+        "EXECUTION_CLIENT_MAINNET",
+        "MEVBOOST_MAINNET"
+      ],
       "services": ["brain"]
     },
     {
