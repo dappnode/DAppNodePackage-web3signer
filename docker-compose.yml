@@ -62,6 +62,12 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
+  tracker:
+    build:
+      context: services/tracker
+      args:
+        TRACKER_VERSION: 0.1.0
+    restart: unless-stopped
 volumes:
   brain_data: {}
   web3signer_data: {}
