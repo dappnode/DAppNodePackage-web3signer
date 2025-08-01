@@ -1,0 +1,16 @@
+  customEndpoints:
+    - name: "Mainnet Validator offline - online notification"
+      description: "Notification when a validator goes offline and comes back online."
+      correlationId: "mainnet-validator-liveness"
+      isBanner: true
+      enabled: true
+    - name: "Mainnet Validator block proposal - missed notification"
+      description: "Notification when a validator proposes a block or misses a block proposal."
+      correlationId: "mainnet-block-proposal"
+      isBanner: true
+      enabled: true
+    - name: "Mainnet Validator slashed notification"
+      description: "Notification when a validator is slashed."
+      correlationId: "mainnet-validator-slashed"
+      isBanner: true
+      enabled: true
