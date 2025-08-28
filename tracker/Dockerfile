@@ -1,6 +1,4 @@
 ARG TRACKER_VERSION
 
 FROM ghcr.io/dappnode/validator-tracker:${TRACKER_VERSION}
-
-ARG NETWORK
-ENV NETWORK=${NETWORK}
+ENV NETWORK=mainnet
