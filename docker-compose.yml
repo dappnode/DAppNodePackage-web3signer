@@ -67,7 +67,6 @@ services:
       context: tracker
       args:
         TRACKER_VERSION: v0.1.4
-        NETWORK: mainnet
     restart: unless-stopped
 volumes:
   brain_data: {}
