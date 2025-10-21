@@ -14,9 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Build test
     if: github.event_name != 'push'
+    strategy:
+      matrix:
+        variant: [gnosis, lukso, mainnet, hoodi]
     steps:
-      - uses: actions/checkout@v2
-      - run: npx @dappnode/dappnodesdk build --skip_save
+      - uses: actions/checkout@v4
+      - name: Build with variant ${{ matrix.variant }}
+        run: npx @dappnode/dappnodesdk build --skip_save --variant ${{ matrix.variant }}
       
   e2e-test:
     runs-on: mainnet
@@ -31,10 +35,13 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
+    strategy:
+      matrix:
+        variant: [gnosis, lukso, mainnet, hoodi]
     steps:
       - uses: actions/checkout@v4
-      - name: Publish
-        run: npx @dappnode/dappnodesdk publish patch --dappnode_team_preset
+      - name: Publish variant ${{ matrix.variant }}
+        run: npx @dappnode/dappnodesdk publish patch --dappnode_team_preset --variant ${{ matrix.variant }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEVELOPER_ADDRESS: "0xf35960302a07022aba880dffaec2fdd64d5bf1c1"

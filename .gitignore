@@ -1,2 +1,6 @@
 # DAppNodeSDK release directories
 build_*
+
+# Temporary files
+*-tmp.yml
+*-tmp.json

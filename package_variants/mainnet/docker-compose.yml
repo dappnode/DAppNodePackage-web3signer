@@ -1,0 +1,3 @@
+# Variant-specific configuration for Mainnet
+# This file extends the base docker-compose.yml
+version: "3.8"
